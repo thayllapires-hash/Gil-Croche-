@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site de Crochê</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+    }
+    header {
+      background: #e0c097;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #5a3e2b;
+    }
+    nav {
+      background: #d4b89e;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #5a3e2b;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .produto {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+    }
+    .produto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .produto h3 {
+      color: #5a3e2b;
+    }
+    footer {
+      background: #e0c097;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Artes em Crochê da Maria</h1>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Loja</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+  <div class="container">
+    <h2>Produtos em destaque</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="imagens/toalha1.jpg" alt="Toalha de crochê">
+        <h3>Toalha Decorativa</h3>
+        <p>R$ 45,00</p>
+      </div>
+      <div class="produto">
+        <img src="imagens/almofada1.jpg" alt="Almofada de crochê">
+        <h3>Almofada Floral</h3>
+        <p>R$ 60,00</p>
+      </div>
+      <div class="produto">
+        <img src="imagens/bolo1.jpg" alt="Cobre‑bolo de crochê">
+        <h3>Cobre‑bolo Redondo</h3>
+        <p>R$ 30,00</p>
+      </div>
+      <!-- mais produtos -->
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Artes em Crochê da Maria. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
