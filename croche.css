@@ -1,139 +1,75 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Crochê da Gil — peças artesanais, aulas e receitas. Loja online e galeria." />
-  <title>Crochê da Gil</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- favicon vazio, substitua se quiser -->
-</head>
-<body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#">Crochê da Gil</a>
-      <nav class="main-nav">
-        <a href="#sobre">Sobre</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <button class="btn-menu" aria-label="Abrir menu">☰</button>
-    </div>
-  </header>
+:root{
+  --bg:#fffaf6;
+  --accent:#c85a86;
+  --muted:#6b6b6b;
+  --card:#ffffff;
+  --shadow: 0 6px 18px rgba(0,0,0,0.08);
+  --radius:12px;
+  --wrap:1100px;
+  font-family: Inter, system-ui, -apple-system, "Helvetica Neue", Arial;
+  color:#222;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:var(--muted);-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:24px}
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <h1>Peças feitas à mão com amor</h1>
-        <p>Tapetes, amigurumis, acessórios e cursos de crochê — direto do ateliê da Gil.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#produtos">Ver produtos</a>
-          <a class="btn" href="#contato">Fale com a Gil</a>
-        </div>
-      </div>
-    </section>
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:30}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.1rem}
+.main-nav a{margin:0 10px;color:var(--muted);text-decoration:none}
+.btn-menu{display:none;background:none;border:0;font-size:1.3rem}
 
-    <section id="sobre" class="wrap section">
-      <div class="card about">
-        <h2>Sobre a Gil</h2>
-        <p>Olá! Eu sou a Gil, artesã de crochê com X anos de experiência. Crio peças exclusivas e também ensino técnicas em aulas presenciais e online. Cada peça é pensada para durar e encantar.</p>
-      </div>
-    </section>
+/* Hero */
+.hero{padding:56px 0;background:linear-gradient(180deg, #fff0f5, transparent)}
+.hero-inner{text-align:center}
+.hero h1{margin:0 0 8px;font-size:2.1rem;color:#2a2a2a}
+.hero p{margin:0 0 18px;color:var(--muted)}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;background:#fff;border:1px solid #eee;color:var(--muted);text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;border:0;box-shadow:var(--shadow)}
 
-    <section id="produtos" class="wrap section">
-      <h2>Produtos em destaque</h2>
-      <div class="grid products">
-        <!-- Exemplo de produto; duplique e altere conteúdo -->
-        <article class="product" data-title="Tapete Flor" data-price="R$120" data-desc="Tapete redondo feito em barbante 100% algodão. Diâmetro ~80cm.">
-          <img src="https://via.placeholder.com/400x300?text=Tapete+Flor" alt="Tapete Flor — Crochê da Gil" />
-          <div class="product-info">
-            <h3>Tapete Flor</h3>
-            <p class="price">R$120</p>
-            <button class="btn view" aria-haspopup="dialog">Ver detalhes</button>
-          </div>
-        </article>
+/* Sections */
+.section{padding:40px 0}
+h2{color:#333;margin-bottom:18px}
 
-        <article class="product" data-title="Amigurumi Coelho" data-price="R$55" data-desc="Amigurumi fofinho, enchimento antialérgico, ~25cm.">
-          <img src="https://via.placeholder.com/400x300?text=Amigurumi+Coelho" alt="Amigurumi Coelho — Crochê da Gil" />
-          <div class="product-info">
-            <h3>Amigurumi Coelho</h3>
-            <p class="price">R$55</p>
-            <button class="btn view">Ver detalhes</button>
-          </div>
-        </article>
+/* Products */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.product img{width:100%;height:200px;object-fit:cover}
+.product-info{padding:14px}
+.product-info h3{margin:0 0 8px;color:#222}
+.price{color:var(--accent);font-weight:600}
 
-        <article class="product" data-title="Bolsa Xadrez" data-price="R$90" data-desc="Bolsa de mão em crochê com forro interno e zíper.">
-          <img src="https://via.placeholder.com/400x300?text=Bolsa+Xadrez" alt="Bolsa Xadrez — Crochê da Gil" />
-          <div class="product-info">
-            <h3>Bolsa Xadrez</h3>
-            <p class="price">R$90</p>
-            <button class="btn view">Ver detalhes</button>
-          </div>
-        </article>
-      </div>
-    </section>
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;box-shadow:var(--shadow)}
 
-    <section id="galeria" class="wrap section">
-      <h2>Galeria</h2>
-      <div class="gallery">
-        <!-- substitua links por suas imagens -->
-        <img src="https://via.placeholder.com/300x300?text=Peça+1" alt="Peça 1" />
-        <img src="https://via.placeholder.com/300x300?text=Peça+2" alt="Peça 2" />
-        <img src="https://via.placeholder.com/300x300?text=Peça+3" alt="Peça 3" />
-        <img src="https://via.placeholder.com/300x300?text=Peça+4" alt="Peça 4" />
-      </div>
-    </section>
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.contact-form label{display:block;margin-bottom:12px;color:#333}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;outline:none}
+.contact-info p{margin:8px 0;color:var(--muted)}
 
-    <section id="contato" class="wrap section">
-      <h2>Contato</h2>
-      <div class="contact-grid">
-        <form id="contactForm" class="contact-form" novalidate>
-          <label>
-            Nome
-            <input type="text" name="nome" required minlength="2" />
-          </label>
-          <label>
-            E-mail
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Mensagem
-            <textarea name="mensagem" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="btn primary">Enviar mensagem</button>
-        </form>
+/* Footer */
+.site-footer{padding:22px 0;text-align:center;color:var(--muted);font-size:0.95rem}
 
-        <div class="contact-info">
-          <p><strong>Ateliê Crochê da Gil</strong></p>
-          <p>📍 Cidade, Estado</p>
-          <p>📱 WhatsApp: <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">(11) 9 9999-9999</a></p>
-          <p>Siga nas redes: <a href="#" rel="noopener">Instagram</a> · <a href="#" rel="noopener">Facebook</a></p>
-        </div>
-      </div>
-    </section>
-  </main>
+/* Modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);opacity:0;pointer-events:none;transition:opacity .18s}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-content{background:#fff;padding:20px;border-radius:12px;max-width:520px;width:90%;box-shadow:0 18px 40px rgba(0,0,0,0.25)}
+.modal-close{position:absolute;right:18px;top:18px;border:0;background:none;font-size:1.1rem}
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© <span id="ano"></span> Crochê da Gil — Todos os direitos reservados.</p>
-    </div>
-  </footer>
+/* Responsive */
+@media (max-width:900px){
+  .products{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .btn-menu{display:inline-block}
+  .main-nav{display:none}
+}
+@media (max-width:560px){
+  .products{grid-template-columns:1fr}
+  .hero h1{font-size:1.6rem}
+  .gallery img{height:150px}
+}
 
-  <!-- Modal de produto -->
-  <div id="productModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Fechar">✕</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalPrice" class="price"></p>
-      <p id="modalDesc"></p>
-      <div class="modal-actions">
-        <a id="buyLink" class="btn primary" href="#">Comprar / Pedir</a>
-        <button class="btn" id="modalContactBtn">Pedir pelo WhatsApp</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
