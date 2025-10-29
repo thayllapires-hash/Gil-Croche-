@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Crochê da Gil — peças artesanais, aulas e receitas. Loja online e galeria." />
+  <title>Crochê da Gil</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- favicon vazio, substitua se quiser -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">Crochê da Gil</a>
+      <nav class="main-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="btn-menu" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <h1>Peças feitas à mão com amor</h1>
+        <p>Tapetes, amigurumis, acessórios e cursos de crochê — direto do ateliê da Gil.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#produtos">Ver produtos</a>
+          <a class="btn" href="#contato">Fale com a Gil</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="wrap section">
+      <div class="card about">
+        <h2>Sobre a Gil</h2>
+        <p>Olá! Eu sou a Gil, artesã de crochê com X anos de experiência. Crio peças exclusivas e também ensino técnicas em aulas presenciais e online. Cada peça é pensada para durar e encantar.</p>
+      </div>
+    </section>
+
+    <section id="produtos" class="wrap section">
+      <h2>Produtos em destaque</h2>
+      <div class="grid products">
+        <!-- Exemplo de produto; duplique e altere conteúdo -->
+        <article class="product" data-title="Tapete Flor" data-price="R$120" data-desc="Tapete redondo feito em barbante 100% algodão. Diâmetro ~80cm.">
+          <img src="https://via.placeholder.com/400x300?text=Tapete+Flor" alt="Tapete Flor — Crochê da Gil" />
+          <div class="product-info">
+            <h3>Tapete Flor</h3>
+            <p class="price">R$120</p>
+            <button class="btn view" aria-haspopup="dialog">Ver detalhes</button>
+          </div>
+        </article>
+
+        <article class="product" data-title="Amigurumi Coelho" data-price="R$55" data-desc="Amigurumi fofinho, enchimento antialérgico, ~25cm.">
+          <img src="https://via.placeholder.com/400x300?text=Amigurumi+Coelho" alt="Amigurumi Coelho — Crochê da Gil" />
+          <div class="product-info">
+            <h3>Amigurumi Coelho</h3>
+            <p class="price">R$55</p>
+            <button class="btn view">Ver detalhes</button>
+          </div>
+        </article>
+
+        <article class="product" data-title="Bolsa Xadrez" data-price="R$90" data-desc="Bolsa de mão em crochê com forro interno e zíper.">
+          <img src="https://via.placeholder.com/400x300?text=Bolsa+Xadrez" alt="Bolsa Xadrez — Crochê da Gil" />
+          <div class="product-info">
+            <h3>Bolsa Xadrez</h3>
+            <p class="price">R$90</p>
+            <button class="btn view">Ver detalhes</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" class="wrap section">
+      <h2>Galeria</h2>
+      <div class="gallery">
+        <!-- substitua links por suas imagens -->
+        <img src="https://via.placeholder.com/300x300?text=Peça+1" alt="Peça 1" />
+        <img src="https://via.placeholder.com/300x300?text=Peça+2" alt="Peça 2" />
+        <img src="https://via.placeholder.com/300x300?text=Peça+3" alt="Peça 3" />
+        <img src="https://via.placeholder.com/300x300?text=Peça+4" alt="Peça 4" />
+      </div>
+    </section>
+
+    <section id="contato" class="wrap section">
+      <h2>Contato</h2>
+      <div class="contact-grid">
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>
+            Nome
+            <input type="text" name="nome" required minlength="2" />
+          </label>
+          <label>
+            E-mail
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Mensagem
+            <textarea name="mensagem" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Enviar mensagem</button>
+        </form>
+
+        <div class="contact-info">
+          <p><strong>Ateliê Crochê da Gil</strong></p>
+          <p>📍 Cidade, Estado</p>
+          <p>📱 WhatsApp: <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">(11) 9 9999-9999</a></p>
+          <p>Siga nas redes: <a href="#" rel="noopener">Instagram</a> · <a href="#" rel="noopener">Facebook</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="ano"></span> Crochê da Gil — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Modal de produto -->
+  <div id="productModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalPrice" class="price"></p>
+      <p id="modalDesc"></p>
+      <div class="modal-actions">
+        <a id="buyLink" class="btn primary" href="#">Comprar / Pedir</a>
+        <button class="btn" id="modalContactBtn">Pedir pelo WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
